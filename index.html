@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Tính Lương</title>
+</head>
+<body>
+    <h1>Hệ Thống Tính Lương</h1>
+
+    <label>Lương cơ bản:</label>
+    <input type="number" id="luong"><br><br>
+
+    <label>Ngày công:</label>
+    <input type="number" id="ngaycong"><br><br>
+
+    <button onclick="tinhLuong()">Tính lương</button>
+
+    <h2 id="ketqua"></h2>
+
+    <script>
+        function tinhLuong() {
+            let luong = Number(document.getElementById("luong").value);
+            let ngaycong = Number(document.getElementById("ngaycong").value);
+
+            let tong = (luong / 26) * ngaycong;
+
+            document.getElementById("ketqua").innerHTML =
+                "Lương nhận được: " + tong.toLocaleString() + " VNĐ";
+        }
+    </script>
+</body>
+</html>
